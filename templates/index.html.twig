@@ -1,0 +1,15 @@
+Hello {{ name }}!
+<br/>
+
+{{ form_errors(form) }}
+<form action="" method="post">
+    {{ form_label(form.name) }}<br/>
+    {{ form_widget(form.name) }}
+    <hr/>
+    {{ form_label(form.email) }}<br/>
+    {{ form_widget(form.email) }}
+    <hr/>
+    {{ form_label(form.job.name) }}<br/>
+    {{ form_widget(form.job.name) }}
+    <input type="submit"/>
+</form>

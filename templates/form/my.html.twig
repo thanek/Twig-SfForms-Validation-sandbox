@@ -1,0 +1,23 @@
+{% use "form_div_layout.html.twig" %}
+
+{% block form_errors %}
+    {% spaceless %}
+        <ul>
+            {{ block('form_element_errors') }}
+        </ul>
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block form_element_errors %}
+    {% for child in form %}
+        {% for error in child.vars.errors %}
+            <li>{{ child.vars.label | trans }}: {{ error.message }}</li>
+        {% endfor %}
+        {% if child.children | length > 0 %}
+            {% set aform = form %}
+            {% set form = child %}
+            {{ block('form_element_errors') }}
+            {% set form = aform %}
+        {% endif %}
+    {% endfor %}
+{% endblock form_element_errors %}
