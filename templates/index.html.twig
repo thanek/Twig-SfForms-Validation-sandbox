@@ -5,11 +5,21 @@ Hello {{ name }}!
 <form action="" method="post">
     {{ form_label(form.name) }}<br/>
     {{ form_widget(form.name) }}
+
     <hr/>
     {{ form_label(form.email) }}<br/>
     {{ form_widget(form.email) }}
+
+    {#<hr/>#}
+    {#{{ form_label(form.job.name) }}<br/>#}
+    {#{{ form_widget(form.job.name) }}#}
+
     <hr/>
-    {{ form_label(form.job.name) }}<br/>
-    {{ form_widget(form.job.name) }}
+    {{ form_label(form.some_val_type) }}<br/>
+    {{ form_widget(form.some_val_type) }}
+
+    <hr/>
+    {{ form_label(form.some_val_value) }}<br/>
+    {{ form_widget(form.some_val_value) }}
     <input type="submit"/>
 </form>
